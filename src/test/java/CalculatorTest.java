@@ -38,4 +38,13 @@ public class CalculatorTest {
         assertEquals("can't / by zero", ex.getMessage());
     }
 
+    @Test
+    void testmultiplySuccess(){assertEquals(4,myCalc.multiply(2,2));}
+
+    @Test
+    void testmultiplyFail(){
+        Exception ex = assertThrows( UnsupportedOperationException.class, ()->{myCalc.multiply(15,-40000000);});
+        assertEquals("Multiplication overflow", ex.getMessage());
+    }
+
 }
