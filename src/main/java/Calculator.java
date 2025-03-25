@@ -15,4 +15,13 @@ public class Calculator {
         }
         return result;
     }
+    public int divide(int firstNum, int secondNum){
+
+        if (secondNum == 0){
+            throw new ArithmeticException("can't / by zero");
+        }
+        int result = firstNum/ secondNum;
+        return result;
+
+    }
 }
