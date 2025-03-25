@@ -29,4 +29,13 @@ public class CalculatorTest {
        Exception ex = assertThrows( IllegalStateException.class, ()->{myCalc.subtract(10, 20);} );
        assertEquals("negative results not allowed", ex.getMessage());
     }
+    @Test
+    void testDivideSuccess(){assertEquals(2, myCalc.divide(10,5));}
+
+    @Test
+    void testDivideFail(){
+        Exception ex = assertThrows(ArithmeticException.class, ()->{myCalc.divide(10,0);});
+        assertEquals("can't / by zero", ex.getMessage());
+    }
+
 }
